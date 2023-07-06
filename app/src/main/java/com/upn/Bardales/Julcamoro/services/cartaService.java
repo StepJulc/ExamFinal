@@ -6,30 +6,31 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.upn.Bardales.Julcamoro.entities.cartas;
+
 import java.util.List;
 
 @Dao
 public interface cartaService {
-
     @Query("SELECT * FROM cartas")
-    List<cartaService> getAllCarta();
+    List<cartas> getAllCarta();
 
     @Query("SELECT * FROM cartas WHERE sincronizadoCarta LIKE :searchSincro")
-    List<cartaService> searchCarta(boolean searchSincro);
+    List<cartas> searchCarta(boolean searchSincro);
 
     @Query("SELECT * FROM cartas WHERE id LIKE :id")
-    cartaService searchCartaID(int id);
+    cartas searchCartaID(int id);
 
     @Insert
-    void createCarta(cartaService carta);
+    void createCarta(cartas carta);
     @Insert
-    void AgregarList(List<cartaService> cartas);
+    void AgregarList(List<cartas> cartas);
     @Update
-    void  updateCartas(cartaService carta);
+    void  updateCartas(cartas carta);
 
     @Delete
-    void delete(cartaService carta);
+    void delete(cartas carta);
 
     @Delete
-    void deleteList(List<cartaService> cartas);
+    void deleteList(List<cartas> cartas);
 }
