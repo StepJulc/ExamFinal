@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 
 public class duelista {
 
-    public  int idD;
+    public  int idS;
     @PrimaryKey(autoGenerate = true)
     public int id;
     @ColumnInfo(name = "nameDuelista")

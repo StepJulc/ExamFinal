@@ -16,7 +16,7 @@ public interface CartasRepository {
     @Query("SELECT * FROM cartas")
     List<cartas> getAllCarta();
 
-    @Query("SELECT * FROM cartas WHERE sincronizadoCartas LIKE :searchSincro")
+    @Query("SELECT * FROM cartas WHERE sincronizadoCarta LIKE :searchSincro")
     List<cartas> searchCarta(boolean searchSincro);
 
     @Query("SELECT * FROM cartas WHERE id LIKE :id")

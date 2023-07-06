@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 public class cartas {
 
 
-    public int idC;
+    public int idB;
     @PrimaryKey(autoGenerate = true)
     public int id;
     @ColumnInfo(name = "duelistaID")
@@ -26,8 +26,8 @@ public class cartas {
     public String longitud;
     @ColumnInfo(name = "urlimagen")
     public String urlimagen;
-    @ColumnInfo(name = "sincronizadoMovimientos")
-    public boolean sincronizadoMovimientos;
+    @ColumnInfo(name = "sincronizadoCarta")
+    public boolean sincronizadoCarta;
     @ColumnInfo(name = "imagenBase64")
     public String imagenBase64;
 
