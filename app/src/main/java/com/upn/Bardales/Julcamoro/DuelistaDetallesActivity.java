@@ -46,6 +46,9 @@ public class DuelistaDetallesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_duelista_detalles);
 
 
+        Intent intent =  new Intent(getApplicationContext(), DuelistaDetallesActivity.class);
+        startActivity(intent);
+
         mRetrofit = RetrofitBuilder.build();
 
         tvNombre  = findViewById(R.id.tvNombre);

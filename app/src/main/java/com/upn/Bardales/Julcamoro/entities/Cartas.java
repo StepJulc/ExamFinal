@@ -17,7 +17,7 @@ public class Cartas {
     @ColumnInfo(name = "duelistaID")
     public int duelistaID;
     @ColumnInfo(name = "puntosAtaque")
-    public String puntosAtaque;
+    public int puntosAtaque;
     @ColumnInfo(name = "puntosDefenza")
     public int puntosDefenza;
     @ColumnInfo(name = "latitud")
@@ -31,8 +31,6 @@ public class Cartas {
     @ColumnInfo(name = "imagenBase64")
     public String imagenBase64;
 
-
-
-
+    @ColumnInfo(name = "nameCarta")
     public String nameCarta;
 }

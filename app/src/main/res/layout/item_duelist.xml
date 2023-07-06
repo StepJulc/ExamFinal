@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Número  "
+            android:text="Nro. "
             android:textAlignment="textEnd"
             android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Duelista  "
+            android:text="DUELISTA : "
             android:textAlignment="textEnd"
             android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sincronizar  "
+            android:text="Sincro : "
             android:textAlignment="textEnd"
             android:textStyle="bold" />
 
@@ -59,13 +59,13 @@
             android:id="@+id/tvIDDuelistaList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="N° ID" />
+            android:hint=" ID" />
 
         <TextView
             android:id="@+id/tvDuelistaListar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Duelista" />
+            android:hint=" CUENTA" />
 
         <TextView
             android:id="@+id/tvDuelistaSincro"

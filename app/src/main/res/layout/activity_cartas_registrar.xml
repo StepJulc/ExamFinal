@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="68dp"
-        android:text="Cartas"
+        android:text="CARTAS"
         android:textAlignment="textStart"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -23,23 +23,23 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="100dp"
         android:text="Nombre : "
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/edNombreCart"
         android:layout_width="218dp"
         android:layout_height="41dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="91dp"
         android:ems="10"
         android:hint="Nombre"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -47,11 +47,11 @@
         android:id="@+id/edAtaqueCart"
         android:layout_width="218dp"
         android:layout_height="41dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Ataque"
-        android:inputType="text|textMultiLine"
+        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/edNombreCart" />
 
@@ -59,21 +59,21 @@
         android:id="@+id/edDefenzaCart"
         android:layout_width="218dp"
         android:layout_height="41dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Defenza"
-        android:inputType="text|textMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/edAtaqueCart" />
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/edNombreCart" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="31dp"
-        android:text="Ataque : "
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:text="Puntos de Ataque : "
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,13 +83,25 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="62dp"
-        android:text="Defenza : "
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="88dp"
+        android:text="Puntos de Defenza : "
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="76dp"
+        android:text="UBICACION"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edAtaqueCart" />
 
     <TextView
         android:id="@+id/textView16"
@@ -106,20 +118,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="24dp"
         android:text="Latitud : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edDefenzaCart" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/tvLatitudCart"
         android:layout_width="111dp"
         android:layout_height="21dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="24dp"
         android:hint="Latitud"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/edDefenzaCart" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/tvLongitudCart"
@@ -136,8 +148,9 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="501dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -154,10 +167,10 @@
         android:id="@+id/btRegistrarCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="24dp"
         android:text="REGISTRAR"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btGaleriaCart" />
+        app:layout_constraintTop_toBottomOf="@+id/ivImagenCart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
