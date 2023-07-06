@@ -32,6 +32,9 @@
         android:theme="@style/Theme.BardalesJulcamoroStephani"
         tools:targetApi="31">
         <activity
+            android:name=".DuelistaDetallesActivity"
+            android:exported="false" />
+        <activity
             android:name=".DuelistaListActivity"
             android:exported="false" />
         <activity

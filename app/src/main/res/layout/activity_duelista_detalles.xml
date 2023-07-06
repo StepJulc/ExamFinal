@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DuelistaDetallesActivity">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="56dp"
+        android:text="DUELISTA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:text="Nro. "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:text="Nombre: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <TextView
+        android:id="@+id/tvNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:hint="N° Duelista"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Nombre"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <Button
+        android:id="@+id/btRegistros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="81dp"
+        android:text="Registrar "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/btVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="81dp"
+        android:text="Ver "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumero" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
