@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         btListas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DuelistaListActivity.class);
+                startActivity(intent);
             }
         });
 

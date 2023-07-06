@@ -33,4 +33,6 @@ public class Cartas {
 
 
 
+
+    public String nameCarta;
 }
