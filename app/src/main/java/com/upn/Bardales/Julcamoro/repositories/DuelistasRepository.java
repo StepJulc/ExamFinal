@@ -35,7 +35,4 @@ public interface DuelistasRepository {
     @Delete
     void deleteList(List<Duelista> duelistas);
 
-
-    //nuevo
-
 }

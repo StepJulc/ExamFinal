@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MAIN_APP: DB SSincro", new Gson().toJson(duelista));
                 duelista.sincronizadoDuelista = true;
                 repositoryD.updateduelista(duelista);
-                //*****SINCRO*************************
+
                 SincronizacionDuelista(serviceD,duelista);
 
             }
@@ -119,9 +119,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void downloadingMockAPIDuelista(DuelistaService duelistaService,DuelistasRepository duelistaRepository , List<Duelista> eliminarDuelista){
-        //***Eleminar datos de BD
+
         duelistaRepository.deleteList(eliminarDuelista);
-        //Cargar datos de MockAPI
+
         Call<List<Duelista>> call = duelistaService.getAllUser();
         call.enqueue(new Callback<List<Duelista>>() {
             @Override

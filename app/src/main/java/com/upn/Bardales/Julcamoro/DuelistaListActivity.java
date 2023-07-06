@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -18,22 +19,22 @@ import java.util.List;
 
 public class DuelistaListActivity extends AppCompatActivity {
 
-    RecyclerView rvListaDuelista;
+    RecyclerView rvListaDu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_duelista_list);
 
-        Log.d("APP_MAIN", "ListasaaaassCuenta");
+        Log.d("APP_MAIN", "List");
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        rvListaDuelista = findViewById(R.id.rvListaDuelista);
-        rvListaDuelista.setLayoutManager(layoutManager);
+        rvListaDu = findViewById(R.id.rvListaDu);
+        rvListaDu.setLayoutManager(layoutManager);
 
-        //**LISTAR***
         LoadingDBCuenta();
-        //***********
+
     }
 
     private void LoadingDBCuenta() {
@@ -42,7 +43,7 @@ public class DuelistaListActivity extends AppCompatActivity {
         List<Duelista> mdataDuelista = repository.getAllDuelista();
 
         DuelistaAdapter mAdapter = new DuelistaAdapter(mdataDuelista);
-        rvListaDuelista.setAdapter(mAdapter);
+        rvListaDu.setAdapter(mAdapter);
         Log.i("MAIN_APP: DB", new Gson().toJson(mdataDuelista));
         Toast.makeText(getBaseContext(), "MOSTRANDO DATOS", Toast.LENGTH_SHORT).show();
 

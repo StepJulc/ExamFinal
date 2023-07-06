@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "cartas")
 
 
-public class cartas {
+public class Cartas {
 
 
     public int idB;

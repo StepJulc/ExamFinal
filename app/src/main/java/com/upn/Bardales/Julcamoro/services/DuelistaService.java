@@ -30,7 +30,6 @@ public interface DuelistaService {
     @GET("duelista/{id}")
     Call<Duelista> findUser(@Path("id") int id);
 
-    // users
     @POST("duelista")
     Call<Duelista> create(@Body Duelista user);
 

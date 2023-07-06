@@ -1,6 +1,6 @@
 package com.upn.Bardales.Julcamoro.services;
 
-import com.upn.Bardales.Julcamoro.entities.cartas;
+import com.upn.Bardales.Julcamoro.entities.Cartas;
 
 import java.util.List;
 
@@ -16,26 +16,25 @@ import retrofit2.http.Query;
 
 public interface CartaService {
     @GET("cartas")
-    Call<List<cartas>> getAllUser();
+    Call<List<Cartas>> getAllUser();
 
     @GET("cartas")
-    Call<List<cartas>> getAllUser(@Query("limit") int limit, @Query("page") int page);
+    Call<List<Cartas>> getAllUser(@Query("limit") int limit, @Query("page") int page);
 
     @GET("cartas")
-    Call<List<cartas>> getBuscar(@Query("search") String nombre);
+    Call<List<Cartas>> getBuscar(@Query("search") String nombre);
 
     @GET("cartas")
-    Call<List<cartas>> getCartasBySincro(@Query("sincronizadoCartas") boolean sincronizar);
+    Call<List<Cartas>> getCartasBySincro(@Query("sincronizadoCartas") boolean sincronizar);
 
     @GET("cartas/{id}")
-    Call<cartas> findUser(@Path("id") int id);
+    Call<Cartas> findUser(@Path("id") int id);
 
-    // users
     @POST("cartas")
-    Call<cartas> create(@Body cartas user);
+    Call<Cartas> create(@Body Cartas user);
 
     @PUT("cartas/{id}")
-    Call<cartas> update(@Path("id") int id, @Body cartas user);
+    Call<Cartas> update(@Path("id") int id, @Body Cartas user);
 
     @DELETE("cartas/{id}")
     Call<Void> delete(@Path("id") int id);
