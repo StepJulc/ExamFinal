@@ -6,36 +6,36 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.upn.Bardales.Julcamoro.entities.duelista;
+import com.upn.Bardales.Julcamoro.entities.Duelista;
 
 import java.util.List;
 
 @Dao
 public interface DuelistasRepository {
 
-    @Query("SELECT * FROM duelista")
-    List<duelista> getAllDuelista();
+    @Query("SELECT * FROM Duelista")
+    List<Duelista> getAllDuelista();
 
     @Query("SELECT * FROM duelista WHERE sincronizadoDuelista LIKE :searchSincro")
-    List<duelista> searchDuelista(boolean searchSincro);
+    List<Duelista> searchDuelista(boolean searchSincro);
 
-    @Query("SELECT * FROM duelista WHERE id LIKE :id")
-    duelista searchDuelistaID(int id);
+    @Query("SELECT * FROM Duelista WHERE id LIKE :id")
+    Duelista searchDuelistaID(int id);
 
     @Insert
-    void createDuelista(duelista duelista);
+    void createDuelista(Duelista duelista);
     @Insert
-    void AgregarList(List<duelista> duelistas);
+    void AgregarList(List<Duelista> duelistas);
     @Update
-    void  updateCartas(duelista duelista);
+    void  updateduelista(Duelista duelista);
 
     @Delete
-    void delete(duelista duelista);
+    void delete(Duelista duelista);
 
     @Delete
-    void deleteList(List<duelista> duelistas);
+    void deleteList(List<Duelista> duelistas);
 
 
-
+    //nuevo
 
 }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "duelista")
 
-public class duelista {
+public class Duelista {
 
     public  int idS;
     @PrimaryKey(autoGenerate = true)

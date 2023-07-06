@@ -2,8 +2,8 @@ package com.upn.Bardales.Julcamoro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,14 +14,15 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.upn.Bardales.Julcamoro.db.AppDatabase;
-import com.upn.Bardales.Julcamoro.entities.duelista;
+import com.upn.Bardales.Julcamoro.entities.Duelista;
 import com.upn.Bardales.Julcamoro.repositories.DuelistasRepository;
-import com.upn.Bardales.Julcamoro.services.duelistaService;
+import com.upn.Bardales.Julcamoro.services.DuelistaService;
 import com.upn.Bardales.Julcamoro.utils.RetrofitBuilder;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button btRegistro;
     Button btListas;
     Retrofit mRetrofit;
-    int cont;
+    int con;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btListas = findViewById(R.id.btListas);
 
         AppDatabase db = AppDatabase.getInstance(getApplicationContext());
-        DuelistasRepository repositoryD = db.DuelistaRepository();
+        DuelistasRepository repositoryD = db.duelistasRepository();
 
 
         btRegistro.setOnClickListener(new View.OnClickListener() {
@@ -55,13 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 if (nombreDuelista.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getBaseContext(), "Llenar Datos", Toast.LENGTH_SHORT).show();
                 } else {
-                    duelista duelista = new duelista();
+                    Duelista duelista = new Duelista();
                     duelista.nameDuelista = nombreDuelista.getText().toString();
                     duelista.sincronizadoDuelista = false;
                     repositoryD.createDuelista(duelista);
                     nombreDuelista.setText("");
                     Log.i("MAIN_APP: Guarda en DB", new Gson().toJson(duelista));
                 }
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -72,20 +75,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        duelistaService serviceD = mRetrofit.create(duelistaService.class);
+        DuelistaService serviceD = mRetrofit.create(DuelistaService.class);
 
         if (isNetworkConnected()) {
-            List<duelista> SinSicroDuelistas = repositoryD.searchDuelista(false);
-            for (duelista duelista :SinSicroDuelistas) {
+            List<Duelista> sinSicroDuelistas = repositoryD.searchDuelista(false);
+            for (Duelista duelista : sinSicroDuelistas) {
                 Log.d("MAIN_APP: DB SSincro", new Gson().toJson(duelista));
                 duelista.sincronizadoDuelista = true;
-                repositoryD.updated(duelista);
+                repositoryD.updateduelista(duelista);
                 //*****SINCRO*************************
                 SincronizacionDuelista(serviceD,duelista);
 
             }
-            List<duelista> EliminarBDDuelista= repositoryD.getAllDuelista();
-            downloadingMockAPIDuelista(serviceD,repositoryD,EliminarBDDuelista);
+            List<Duelista> eliminarBDDuelista = repositoryD.getAllDuelista();
+            downloadingMockAPIDuelista(serviceD,repositoryD, eliminarBDDuelista);
 
             Toast.makeText(getBaseContext(), "SINCRONIZADO", Toast.LENGTH_SHORT).show();
         }else {
@@ -94,19 +97,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void SincronizacionDuelista(duelistaService duelistaService, duelista duelista){
-        Call<duelista> call= duelistaService.create(duelista);
-        call.enqueue(new Callback<duelista>() {
+    private void SincronizacionDuelista(DuelistaService duelistaService, Duelista duelista){
+        Call<Duelista> call= duelistaService.create(duelista);
+        call.enqueue(new Callback<Duelista>() {
             @Override
-            public void onResponse(Call<duelista> call, Response<duelista> response) {
+            public void onResponse(Call<Duelista> call, Response<Duelista> response) {
                 if (response.isSuccessful()) {
-                    duelista data = response.body();
+                    Duelista data = response.body();
                     Log.i("MAIN_APP: MockAPI", new Gson().toJson(data));
                 }
             }
 
             @Override
-            public void onFailure(Call<duelista> call, Throwable t) {
+            public void onFailure(Call<Duelista> call, Throwable t) {
 
             }
         });
@@ -115,23 +118,23 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void downloadingMockAPIDuelista(duelistaService duelistaService,DuelistasRepository duelistaRepository , List<duelista> EliminarDuelista){
+    private void downloadingMockAPIDuelista(DuelistaService duelistaService,DuelistasRepository duelistaRepository , List<Duelista> eliminarDuelista){
         //***Eleminar datos de BD
-        duelistaRepository.deleteList(EliminarDuelista);
+        duelistaRepository.deleteList(eliminarDuelista);
         //Cargar datos de MockAPI
-        Call<List<duelista>> call = duelistaService.getAllUser();
-        call.enqueue(new Callback<List<duelista>>() {
+        Call<List<Duelista>> call = duelistaService.getAllUser();
+        call.enqueue(new Callback<List<Duelista>>() {
             @Override
-            public void onResponse(Call<List<duelista>> call, Response<List<duelista>> response) {
-                List<duelista> data = response.body();
+            public void onResponse(Call<List<Duelista>> call, Response<List<Duelista>> response) {
+                List<Duelista> data = response.body();
                 Log.i("MAIN_APP", new Gson().toJson(data));
-                for (duelista cuenta : data) {
-                    duelistaRepository.createDuelista(cuenta);
+                for (Duelista duelista : data) {
+                    duelistaRepository.createDuelista(duelista);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<duelista>> call, Throwable t) {
+            public void onFailure(Call<List<Duelista>> call, Throwable t) {
 
             }
         });
@@ -141,3 +144,4 @@ public class MainActivity extends AppCompatActivity {
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }
+
