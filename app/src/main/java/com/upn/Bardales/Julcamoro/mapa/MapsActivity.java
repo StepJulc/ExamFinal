@@ -49,7 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             requestPermissions(permissions, 3000);
 
         } else {
-            // configurar frecuencia de actualización de GPS
+            // actualiza de GPS
             mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000L, 1, this);
             Location location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -76,8 +76,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Double longitude = location.getLongitude();
         LocationData.getInstance().setCoordinates(latitude,longitude);
         LatLng latLng = new LatLng(latitude, longitude);
-////        mMap.addMarker(new MarkerOptions().position(latLng).title("Ub"));
-////        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+////        mMap.addMarker(new MarkerOptions().position(latLng).title("Ub"));---------------
+////        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));------------------
         LocationData.getInstance().setCoordinates(latitude,longitude);
         Log.i("MAIN_APPMaps: Location - ",  "Latitude: " + latitude);
         Log.i("MAIN_APPMaps: Location - ",  "Longitude: " + longitude);

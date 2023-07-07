@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="68dp"
-        android:text="CARTAS"
+        android:text="Carta"
         android:textAlignment="textStart"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginTop="100dp"
-        android:text="Nombre : "
+        android:text="Nombre"
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="28dp"
-        android:text="Puntos de Ataque : "
+        android:text="Ataque"
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,23 +85,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="88dp"
-        android:text="Puntos de Defenza : "
+        android:text="Defenza"
         android:textAlignment="textEnd"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="76dp"
-        android:text="UBICACION"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edAtaqueCart" />
 
     <TextView
         android:id="@+id/textView16"
@@ -118,20 +106,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:text="Latitud : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/edDefenzaCart" />
 
     <TextView
         android:id="@+id/tvLatitudCart"
         android:layout_width="111dp"
         android:layout_height="21dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="24dp"
-        android:hint="Latitud"
+        android:layout_marginTop="64dp"
+        android:hint="La"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/edDefenzaCart" />
 
     <TextView
         android:id="@+id/tvLongitudCart"
@@ -139,38 +127,18 @@
         android:layout_height="21dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="19dp"
-        android:hint="Longitud"
+        android:hint="Lo"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/tvLatitudCart" />
-
-    <ImageView
-        android:id="@+id/ivImagenCart"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/btGaleriaCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
-        android:text="GALERIA"
-        app:layout_constraintStart_toEndOf="@+id/ivImagenCart"
-        app:layout_constraintTop_toBottomOf="@+id/tvLongitudCart" />
 
     <Button
         android:id="@+id/btRegistrarCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="24dp"
-        android:text="REGISTRAR"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="68dp"
+        android:text="Registrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImagenCart" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

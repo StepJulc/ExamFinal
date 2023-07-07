@@ -76,14 +76,8 @@ public class CartasRegistrarActivity extends AppCompatActivity {
         edDefenzaCart  = findViewById(R.id.edDefenzaCart);
         tvLatitudCart  = findViewById(R.id.tvLatitudCart);
         tvLongitudCart = findViewById(R.id.tvLongitudCart);
-        ivImagenCart  = findViewById(R.id.ivImagenCart);
-        btGaleriaCart  = findViewById(R.id.btGaleriaCart);
         btRegistrarCart= findViewById(R.id.btRegistrarCart);
 
-
-//************************************************
-//        Intent intent =  new Intent(getApplicationContext(), MapsActivity.class);
-//        startActivity(intent);
 
         double Latitud = LocationData.getInstance().getLatitude();
         double Longitud = LocationData.getInstance().getLongitude();
@@ -93,12 +87,6 @@ public class CartasRegistrarActivity extends AppCompatActivity {
         tvLatitudCart.setText(String.valueOf(Latitud));
         tvLongitudCart.setText(String.valueOf(Longitud));
 
-        btGaleriaCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGallery();
-            }
-        });
 
         btRegistrarCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,8 +100,6 @@ public class CartasRegistrarActivity extends AppCompatActivity {
                     carta.puntosDefenza  = Integer.parseInt(String.valueOf(edDefenzaCart.getText()));
                     carta.latitud        = String.valueOf(Latitud);
                     carta.longitud       = String.valueOf(Longitud);
-                    carta.imagenBase64   = imagenBase64;
-                    carta.urlimagen      = urlImage;
                     carta.sincronizadoCarta = false;
                     carta.nameCarta      = String.valueOf(edNombreCart.getText());
 
@@ -162,9 +148,7 @@ public class CartasRegistrarActivity extends AppCompatActivity {
             if (isNetworkConnected()) {
                 base64toLink(imagenBase64);
 
-            }
-
-//            base64toLink(base64);
+            }//base64toLink(base64);
         }
     }
 
@@ -226,11 +210,11 @@ public class CartasRegistrarActivity extends AppCompatActivity {
                     urlImage = "https://demo-upn.bit2bittest.com/" + imageResponse.getUrl();
                     tvUrlImagenMov.setText(urlImage);
                     Toast.makeText(getBaseContext(), "Link GENERADO", Toast.LENGTH_SHORT).show();
-                    Log.i("Imagen url:", urlImage);
+                    Log.i("Imágen url:", urlImage);
 
                 } else {
 
-                    Log.e("Error cargar imagen",response.toString());
+                    Log.e("Error",response.toString());
                 }
             }
 

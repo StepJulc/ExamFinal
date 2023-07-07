@@ -37,7 +37,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="56dp"
         android:ems="10"
-        android:hint="Duelista"
+        android:hint="Nombre"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="60dp"
-        android:text="Registro"
+        android:text="Registra"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreDuelista" />
 
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:layout_marginTop="60dp"
-        android:text="Listas"
+        android:text="Lista"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreDuelista" />
 

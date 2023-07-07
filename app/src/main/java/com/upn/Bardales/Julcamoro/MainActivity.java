@@ -92,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
             List<Duelista> eliminarBDDuelista = repositoryD.getAllDuelista();
             downloadingMockAPIDuelista(serviceD,repositoryD, eliminarBDDuelista);
 
-            Toast.makeText(getBaseContext(), "SINCRONIZADO", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Sincronizando...", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(getBaseContext(), "NO HAY INTERNET", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Sin internet", Toast.LENGTH_SHORT).show();
 
         }
     }

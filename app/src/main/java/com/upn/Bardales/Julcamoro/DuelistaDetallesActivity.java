@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.upn.Bardales.Julcamoro.db.AppDatabase;
 import com.upn.Bardales.Julcamoro.entities.Cartas;
 import com.upn.Bardales.Julcamoro.entities.Duelista;
+import com.upn.Bardales.Julcamoro.mapa.MapsActivity;
 import com.upn.Bardales.Julcamoro.repositories.CartasRepository;
 import com.upn.Bardales.Julcamoro.repositories.DuelistasRepository;
 import com.upn.Bardales.Julcamoro.services.CartaService;
@@ -46,7 +47,7 @@ public class DuelistaDetallesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_duelista_detalles);
 
 
-        Intent intent =  new Intent(getApplicationContext(), DuelistaDetallesActivity.class);
+        Intent intent =  new Intent(getApplicationContext(), MapsActivity.class);
         startActivity(intent);
 
         mRetrofit = RetrofitBuilder.build();
@@ -64,7 +65,7 @@ public class DuelistaDetallesActivity extends AppCompatActivity {
 
         int idObtener;
         idObtener = getIntent().getIntExtra("id",0);
-        Log.d("APP_MAIN: idRec", String.valueOf(idObtener));
+        Log.d("APP_MAIN: idRec3", String.valueOf(idObtener));
 
 
         Duelista duelista = repositoryD.searchDuelistaID(idObtener);
@@ -82,6 +83,7 @@ public class DuelistaDetallesActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), CartasRegistrarActivity.class);
+                intent.putExtra("id", idObtener);
                 startActivity(intent);
 
             }
@@ -108,9 +110,9 @@ public class DuelistaDetallesActivity extends AppCompatActivity {
                 SincronizacionCarta(serviceM,carta);
             }
 
-            Toast.makeText(getBaseContext(), "SINCRO", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "SINC", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(getBaseContext(), "SIN INTERNET", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
 
         }
 
